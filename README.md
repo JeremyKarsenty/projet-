@@ -2,4 +2,6 @@
 
 Création de la structure  html de base.
 
-Création du header. 
+Création du header
+
+Ajout de la photo 
