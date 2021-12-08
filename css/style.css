@@ -1,15 +1,17 @@
 #Premiertitre{
-    background-color: rgb(252, 252, 252);
+    background-color: #616161;
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 20px;
-    border: dashed rgb(129, 191, 228);
+    border: dashed #ffffff;
 }
+
 
 
 /*                                                           texte h4                                                                   */
 h4 {
     font-family: 'Scheherazade New', serif;
+    color: #1f1f1f;
 }
 
 /*                                                           Images 1                                                                   */
@@ -30,7 +32,7 @@ h4 {
 .menu {
     display: flex;                /* Transformation en flexbox */
     padding:0;                    /* Suppression des marges internes */
-    background-color: rgb(129, 191, 228);     /* Ajout de la couleur d'arrière-plan */
+    background-color: #616161;     /* Ajout de la couleur d'arrière-plan */
     justify-content: right;       /* Alignements des liens dans le menu */
 }
 .menu li {
@@ -44,8 +46,8 @@ h4 {
     margin: 0.5rem;               /* Marges externes */
     padding: 0.4rem 0;            /* Marges internes */
     text-align: center;           /* Centrage du texte */   
-    background-color: #524f4f;  /* Arrière-plan */
-    color: #fff;                /* Couleur du texte */
+    background-color: rgb(255, 255, 255);  /* Arrière-plan */
+    color: rgb(0, 0, 0);                /* Couleur du texte */
     text-decoration: none;        /* Suppression du soulignement */
     border: 1px solid #fff;     /* Ajout d'une bordure */
     border-radius: 4px;           /* Arrondis des bordures */
@@ -59,9 +61,9 @@ h4 {
 }
 .menu a:hover,
 .menu a:hover.actif{
-    background-color: #80b8d8;
-    color: #ffe843;
-    border-color: #ffe843;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 
 
@@ -70,11 +72,49 @@ h4 { position : absolute ;
     
 }
 
-
+/*                      texte en dessous de la photo                 */
 #conteneur1{
     text-align: center;
 }
 
+
+/*----------------------------------------------------*/
+/* SLIDER */
+/* propriétes des images de slider */
+.slider {
+  width: 780px;
+  height: 410px;
+  overflow: hidden;
+  margin: 0px auto;
+}
+.slides {
+  width: calc(780px * 2);
+  animation: glisse 10s infinite;
+}
+.slide {
+  float: left;
+}
+/* images qui se déplacent */
+@keyframes glisse {
+  0% {
+      transform: translateX(0);
+  }
+  10% {
+      transform: translateX(0);
+  }
+
+  50% {
+      transform: translateX(-780px);
+  }
+  60% {
+      transform: translateX(-780px);
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
+/*----------------------------------------------------*/
 
 
 
@@ -83,12 +123,7 @@ h4 { position : absolute ;
     0%{transform: translate(0,0);}
     100%{transform: translate(-2880px,0);}
 }
-.conteneur3{
-    max-width: 460px;
-    overflow: hidden;
-    margin: 50px auto;
-    box-shadow: 0px 0px 10px #777;
-}
+
 .d2{
     width: 400%;
     height: 400;
@@ -107,66 +142,51 @@ h4 { position : absolute ;
 }
 
 
+/*                                    Flip card                                         */
 
 
-#projetscard{
-    display: flex;
-    justify-content: space-around;
+#projets{
+  display: flex;
+  justify-content: space-around;
 }
+.flip-card {
+  /*background-color: rgb(255, 240, 155);*/
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  text-align: center;}
 
-.card {
-justify-content: space-around;
-background-color: rgb(129, 191, 228);
-width: 30%;
-height: 400px;
-perspective: 1000px;
-align-items: center;
-text-align: center;
-
-}
-
-.content {
-  position: absolute;
+.flip-card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
   transition: transform 1s;
   transform-style: preserve-3d;
 }
 
-.card:hover .content {
-  transform: rotateY( 180deg ) ;
-  transition: transform 0.5s;
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-.front,
-.back {
+.flip-card-front, .flip-card-back {
   position: absolute;
-  height: 100%;
   width: 100%;
-  background: white;
-  /*line-height: 50px;*/
-  color: #03446A;
-  text-align: center;
-  font-size: 28px;
-  border-radius: 5px;
-  backface-visibility: hidden;
+  height: 100%;}
+
+.flip-card-front {
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
-.back {
-  background: #03446A;
-  color: white;
-  transform: rotateY( 180deg );
+.flip-card-back {
+  /*background-color: #532e1f;*/
+  background: linear-gradient(225deg, rgb(121, 121, 121), rgb(121, 121, 121) );
+  color: rgb(255, 255, 255);
+  transform: rotateY(180deg);
 }
 
-.front img{
-  max-width: 80%;
-  height: auto;
-}
 
-.back p{
-  font-size: 2vmin;
-}
 
 
 body {font-family: Arial, Helvetica, sans-serif;
@@ -203,12 +223,12 @@ body {font-family: Arial, Helvetica, sans-serif;
 
 
 
-  
+  /*                formulaire                          */
   .formulaire {
     /* Ajouter box-sizing */
     box-sizing : border-box;
     border-radius:5px;
-    background-color:#f2f2f2;
+    background-color:#616161;
     padding:20px;
     width: 100%;
     /* redéfinition 400 + 2*20 */
@@ -216,7 +236,7 @@ body {font-family: Arial, Helvetica, sans-serif;
     margin:0 auto;
   }
   h1  {
-    color: #80b8d8;
+    color: #000000;
     width: 100%;
   }
 
@@ -225,6 +245,12 @@ body {font-family: Arial, Helvetica, sans-serif;
 
 
 
+
+/*                              footer                                */
+
+footer{
+  background-color: #616161;
+}
 
 footer ul
 {
@@ -239,22 +265,22 @@ footer li {
     justify-content: center;
     align-items: center;
     border-radius: 150px;
-    background: linear-gradient(225deg, #02ca2e, #1a0dd6,#d60d0d );
-    box-shadow:  -5px 5px 9px #c3c3c3,
-                  5px -5px 9px #fdfdfd;
+    background: linear-gradient(225deg, rgb(187, 187, 187), #525252 );
+    box-shadow:  -5px 5px 9px #000000;
+                  
     cursor: pointer;
   }
 
   footer li:nth-child(1) i {
-    color: rgb(245, 245, 247);
+    color: rgb(0, 0, 0);
   }
   
   footer li:nth-child(2) i {
-    color: rgb(249, 250, 249);
+    color: rgb(0, 0, 0);
   }
   
   footer li:nth-child(3) i {
-    color: rgb(249, 251, 252);
+    color: rgb(0, 0, 0);
   }
 
 
@@ -267,9 +293,35 @@ footer li {
 html, body{
     font-family: 'Noto Sans JP', sans-serif;
     background-color: rgba(255, 255, 255, 0.568);
-    background-image: linear-gradient(60deg, rgb(66, 66, 66) 0%, #80b8d8 100%);
+    background-image: linear-gradient(60deg, rgb(255, 255, 255) 0%, #ffffff 100%);
+    
 }
 
+
+
+
+@media all and (max-width: 1240px)
+{
+  #name, #projetscard, #Premiertitre,#projets,#menu,#nom, #slider, #footer
+  {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: stretch;
+    flex-flow: row wrap;
+  }
+
+}
+
+@media all and (max-width: 800px)
+{
+  .slider{
+    display:none
+  }
+}
+
+
+/*----------------------------------------------------------*/
 
 
 
